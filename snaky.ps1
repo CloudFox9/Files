@@ -29,3 +29,4 @@ function Clipboard-Creep
     Start-Sleep -Seconds $Sleep
 }
 }
+Clipboard-Creep
